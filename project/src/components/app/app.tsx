@@ -1,5 +1,7 @@
-function App(): JSX.Element {
-  return <p>Hello, world!</p>;
-}
 
-export default App;
+import { IAppStore } from '../../types/appstore.types';
+import {Main} from '../main/main';
+
+export function App({...args}: IAppStore): JSX.Element {
+  return <Main {...args}/>;
+}
