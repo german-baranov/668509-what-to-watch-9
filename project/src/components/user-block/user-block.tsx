@@ -1,7 +1,7 @@
 import React from 'react';
 
 type UserBlockProps = {
-    isSigned: boolean;
+    isSigned?: boolean;
 }
 
 export function UserBlock ({isSigned}: UserBlockProps) { // cant return null with :JSX.Element. why?

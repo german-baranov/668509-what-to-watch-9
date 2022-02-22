@@ -3,7 +3,7 @@ import {UserBlock} from '../user-block/user-block';
 
 type HeaderProps = {
   title?: string;
-  isSigned: boolean;
+  isSigned?: boolean;
   hasNavigation?: boolean;
 }
 
