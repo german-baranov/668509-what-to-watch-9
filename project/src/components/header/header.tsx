@@ -25,7 +25,7 @@ export function Header ({isSigned, title, hasNavigation}: HeaderProps): JSX.Elem
         </ul>
       </nav>
       }
-      {title && <h1 className="page-title user-page__title">title</h1>}
+      {title && <h1 className="page-title user-page__title">{title}</h1>}
       <UserBlock isSigned={isSigned}/>
     </header>
   );
