@@ -1,7 +1,26 @@
-
+import {Route, BrowserRouter, Routes} from 'react-router-dom';
 import { IAppStore } from '../../types/appstore.types';
 import {Main} from '../main/main';
+import {AppRoute} from '../../const';
+import { SignIn } from '../sign-in/sign-in';
+import { MyList } from '../my-list/my-list';
+import { MoviePage } from '../movie-page/movie-page';
+import { Player } from '../player/player';
+import NotFoundScreen from '../not-found-screen/not-found-screen';
+import { AddReview } from '../add-review/add-review';
 
 export function App({...args}: IAppStore): JSX.Element {
-  return <Main {...args}/>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path={AppRoute.Main} element={<Main {...args}/>}/>
+        <Route path={AppRoute.SignIn} element={<SignIn/>}/>
+        <Route path={AppRoute.MyList} element={<MyList/>}/>
+        <Route path={AppRoute.Film} element={<MoviePage/>}/>
+        <Route path={AppRoute.AddReview} element={<AddReview/>}/>
+        <Route path={AppRoute.Player} element={<Player/>}/>
+        <Route path='*' element={<NotFoundScreen/>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
